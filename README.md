@@ -7,3 +7,6 @@ The Pomodoro Technique is a time management system that encourages people to wor
 - [x] Timer techniques with Python ⏰
   
 - [x] Lists comprehension 🤓
+
+# Code sneak peek
+![image](image.gif)
