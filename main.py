@@ -16,8 +16,13 @@ timer = None
 def reset_timer():
     window.after_cancel(timer)
     #I need to reset the timer_text to 00:00
+    canvas.itemconfig(timer_text, text=f"00:00")
     #the title_label "Timer"
+    time_label.config(text="Timer", fg=RED)
     #reset the checkmarks
+    check_label.config(text="")
+    global reps
+    reps = 0
 
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 def start_timer():
