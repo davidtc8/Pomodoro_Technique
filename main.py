@@ -1,4 +1,5 @@
 from tkinter import *
+from plyer import notification
 import math
 # ---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
@@ -35,12 +36,29 @@ def start_timer():
     if reps % 8 == 0:
         time_label.config(text="Long break", fg = RED)
         count_down(long_break_sec)
+        # sent a notification
+        notification.notify(
+        title = 'take a break',
+        message = "Is time to take a long break.",
+        app_icon = 'break.ico')
+
     elif reps % 2 == 0:
         time_label.config(text="Break", fg = PINK)
         count_down(short_break_sec)
+        # sent a notification
+        notification.notify(
+        title = 'take a break',
+        message = "Is time to take  break.",
+        app_icon = 'break.ico')
+
     else:
         time_label.config(text="Work!", fg = GREEN)
         count_down(work_sec)
+        # sent a notification
+        notification.notify(
+        title = 'time to work',
+        message = "Is time to work.",
+        app_icon = 'study.ico')
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
 def count_down(count):
